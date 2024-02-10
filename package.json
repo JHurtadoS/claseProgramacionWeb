@@ -4,7 +4,9 @@
   "description": "clase 1",
   "main": "./assets/js/index.js",
   "scripts": {
-
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "keywords": [
     "js",
@@ -21,7 +23,9 @@
     "postcss-loader": "^8.1.0",
     "postcss-preset-env": "^9.3.0",
     "style-loader": "^3.3.4",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
 
   }
 }
