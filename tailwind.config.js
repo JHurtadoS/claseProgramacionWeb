@@ -1,12 +1,15 @@
-
- /** @type {import('tailwindcss').Config} */
- module.exports = {
-    content: ["./src/**/*.{html,js}"],
-    theme: {
-        extend: {
-            fontFamily: {
-              'blw': ['"Barlow"'],
-            },
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'blw': ['"Barlow"'],
+      },
     },
-    plugins: [],
-  }
+  },
+  plugins: [],
+}
