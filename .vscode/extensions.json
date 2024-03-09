@@ -1,14 +1,4 @@
 {
-    "recommendations": [
-        "bradlc.vscode-tailwindcss",
-        "austenc.tailwind-docs",
-        "github.remotehub",
-        "visualstudioexptteam.vscodeintellicode",
-        "equinusocio.vsc-material-theme",
-        "equinusocio.vsc-material-theme-icons",
-        "christian-kohler.path-intellisense",
-        "azemoh.one-monokai",
-        "whizkydee.material-palenight-theme",
-        "vscode-icons-team.vscode-icons"
-    ]
+  "recommendations": ["astro-build.astro-vscode"],
+  "unwantedRecommendations": []
 }
