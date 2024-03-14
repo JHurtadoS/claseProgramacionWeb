@@ -1,4 +1,18 @@
 {
-  "recommendations": ["astro-build.astro-vscode"],
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "usernamehw.errorlens",
+    "gerane.theme-flatlandmonokai",
+    "mhutchie.git-graph",
+    "equinusocio.vsc-material-theme",
+    "equinusocio.vsc-material-theme-icons",
+    "christian-kohler.path-intellisense",
+    "austenc.tailwind-docs",
+    "meganrogge.template-string-converter",
+    "vscode-icons-team.vscode-icons",
+    "wallabyjs.console-ninja",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss"
+  ],
   "unwantedRecommendations": []
 }

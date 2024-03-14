@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import User from "../Logos/User.astro" 
+
+---
+
+<nav class="w-full bg-black px-8 py-4">
+    <div class="flex  justify-between">
+    <Image src="/public/img/Hotelia horizontal blanco.svg" height={40} width={200} alt="logo"></Image>
+        <ul class=" flex items-center gap-x-9">
+        <li>
+            <button class=" text-white text-lg">Inicio</button>
+        </li>
+        <li>
+            <button class=" text-white text-lg">Ubicanos</button>
+        </li>
+        <li>
+            <button class=" text-white text-lg">Opiniones</button>
+        </li>
+        <li>
+            <a class=" text-white text-lg flex gap-2 bg-neutralBlue p-3  rounded-sm" href="#"> 
+                <User className="h-6 w-6"/> Iniciar Sesion
+            </a>
+        </li>
+    </ul>
+
+</div>
+</nav>
