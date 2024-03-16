@@ -1,8 +1,8 @@
 ---
-import '../css/main.css';
-import Navbar from '../componnets/Main/Navbar.astro';
-import Background from "../componnets/Main/Background.astro"
-
+import "../css/main.css";
+import Navbar from "../componnets/Main/Navbar.astro";
+import Background from "../componnets/Main/Background.astro";
+import { Image } from "astro:assets";
 ---
 
 <html lang="en">
@@ -15,11 +15,43 @@ import Background from "../componnets/Main/Background.astro"
 	</head>
 	<body>
 		<header>
-			<Navbar/>
+			<Navbar />
 		</header>
 		<main>
-			<Background/>
-			
+			<Background />
 		</main>
+		<section class="flex justify-center">
+			<div
+				class="py-20 px-10 lg:py-40 lg:px-20 w-full flex flex-col md:flex-row gap-10 md:justify-between md:w-11/12"
+			>
+				<p class="max-w-5xl text-[1.4rem] text-pretty">
+					Estamos ubicados en el barrio La Cabrera al norte de Bogotá,
+					en un contexto de lujo donde interactúan los negocios, el
+					ocio y el descanso, gracias a su estratégica ubicación
+					rodeada de bancos, restaurantes de alta cocina, centros
+					comerciales, almacenes de lujo y emblemáticos parques para
+					aprovechar la naturaleza entre la ciudad caminay y hacer un
+					poco de deporte al aire libre están el parque del Virrey y
+					El Parque de la 93. Además de nuestro exclusivo diseño,
+					ponemos a tu disposición una oferta gastronómica tan
+					sofisticada como saludable a base de productos locales,
+					cargados de lo mejor de la tradición colombiana.
+				</p>
+
+				<Image
+					class="object-contain aspect-[15/17]"
+					src="/public/img/Hotelia negro vertical.svg"
+					alt="Hotelia negro vertical"
+					width={300}
+					height={300}
+				/>
+			</div>
+		</section>
 	</body>
 </html>
+
+<style>
+	section {
+		@apply px-12;
+	}
+</style>
