@@ -3,6 +3,11 @@ import "../css/main.css";
 import Navbar from "../componnets/Main/Navbar.astro";
 import Background from "../componnets/Main/Background.astro";
 import { Image } from "astro:assets";
+import Bell from "../componnets/Logos/Bell.astro"
+import Dumbble from "../componnets/Logos/Dumbble.astro"
+import Wifi from "../componnets/Logos/Wifi.astro"
+import Bed from "../componnets/Logos/Bed.astro"
+
 ---
 
 <html lang="en">
@@ -47,6 +52,33 @@ import { Image } from "astro:assets";
 				/>
 			</div>
 		</section>
+		<section id="enjoy-cards" class="mt-6 pt-6 !px-0">
+			<div class="min-h-[420px] w-full">
+					<h2 class="w-full p-1 text-white text-center text-[2.3rem]  bg-black/50 px-12 drop-shadow-xl">
+						Razones por las que disfrutaras quedarte con nostros
+					</h2>
+
+					<div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-10 pb-12 mx-6">
+							<article class=" bg-darkBlue/80 p-9 h-48 flex flex-col items-center gap-y-8 	">
+								<Bell className="h-20 w-20 text-white"/>
+								<h3 class=" text-2xl text-white font-semibold tracking-wide">Lorem ipsum dolor</h3>
+							</article>
+							<article class="bg-black/80 p-9 h-48 flex flex-col items-center gap-y-8 	">
+								<Bed className="h-20 w-20 text-white"/>
+								<h3 class=" text-2xl text-white font-semibold tracking-wide">Lorem ipsum dolor</h3>
+							</article>
+							<article class="bg-darkBlue/80 p-9 h-48 flex flex-col items-center gap-y-8 	">
+								<Wifi className="h-20 w-20 text-white"/>
+								<h3 class=" text-2xl text-white font-semibold tracking-wide">Lorem ipsum dolor</h3>
+							</article>
+							<article class="bg-black/80 p-9 h-48 flex flex-col items-center gap-y-8 	">
+								<Dumbble className="h-20 w-20 text-white"/>
+								<h3 class=" text-2xl text-white font-semibold tracking-wide">Lorem ipsum dolor</h3>
+							</article>
+					</div>
+			</div>
+		</section>
+
 	</body>
 </html>
 
@@ -54,4 +86,18 @@ import { Image } from "astro:assets";
 	section {
 		@apply px-12;
 	}
+
+	#enjoy-cards
+	{
+		background-image: url("/img/Index/bg-features.png");
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+
+	#enjoy-cards h2{
+		text-shadow: 1px 2px 6px rgba(0,0,0,0.3);
+
+	}
+
 </style>

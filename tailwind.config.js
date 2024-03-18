@@ -14,6 +14,7 @@ export default {
         neutralBlue: "#337ab7",
         rose: "#9c2759",
         greenNeutal: "#157a8a",
+        darkBlue:"#103c64"
       },
     },
   },
