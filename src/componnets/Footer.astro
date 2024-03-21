@@ -1,0 +1,54 @@
+---
+import Twiter from "../componnets/Logos/Twiter.astro";
+import Facebook from "../componnets/Logos/Facebook.astro";
+import Instagram from "../componnets/Logos/Instagram.astro";
+import Phone from "../componnets/Logos/Phone.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<footer
+    class="bg-black px-12 md:px-24 lg:px-28 xl:px-32 py-8  "
+>
+
+<div class="flex flex-col md:flex-row text-white md:gap-x-11 w-full" >
+    <p class="text-inherit w-full md:w-1/3 justify-center">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi
+        asperiores adipisci velit non, atque mollitia, quisquam suscipit culpa
+        vitae error vitae error
+    </p>
+
+    <ul
+        class="py-3 md:py-6 md:px-8 lg:px-10 border-t-2 border-solid border-white md:border-0 w-full md:w-1/3 justify-center"
+    >
+        <li class="flex gap-2">
+            <h5 class="flex md:block">
+                Avenida-Carrera, #12A-42, Bogota DC, Colombia
+            </h5>
+        </li>
+        <li class="flex gap-2">
+            <Phone className="fill-white h-3 w-3" /><h5 class="flex md:block">
+                +57 601 4567899
+            </h5>
+        </li>
+    </ul>
+
+    <ul
+        class="flex border-t-2 border-solid border-white md:border-0 justify-between w-full md:w-1/3 md:justify-center"
+    >
+        <li><h5 class="flex md:block">Politicas de privacidad</h5></li>
+        <li><h5 class="flex md:block">Politicas de privacidad</h5></li>
+    </ul>
+</div>
+   
+        <ul class="border-t-2 border-solid border-white md:border-0 flex-4">
+            <li><Twiter className="fill-white h-7 w-7" /></li>
+            <li><Facebook className="fill-white h-7 w-7" /></li>
+            <li><Instagram className="fill-white h-7 w-7" /></li>
+        </ul>
+    
+</footer>
+
+<style></style>
