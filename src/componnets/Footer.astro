@@ -1,0 +1,64 @@
+---
+import Twiter from "../componnets/Logos/Twiter.astro";
+import Facebook from "../componnets/Logos/Facebook.astro";
+import Instagram from "../componnets/Logos/Instagram.astro";
+import Phone from "../componnets/Logos/Phone.astro";
+import Point from "../componnets/Logos/Point.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<footer class="bg-black px-12 lg:px-12 xl:px-20 py-8 lg:text-lg text-xl">
+    <div
+        class="flex flex-col text-white lg:gap-x-12 xl:gap-x-28 w-full lg:grid lg:grid-cols-3"
+    >
+        <p
+            class="text-inherit w-full justify-center text-pretty h-auto xl:h-28 py-4"
+        >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi
+            asperiores adipisci velit non, atque mollitia, quisquam suscipit
+            culpa vitae error vitae error
+        </p>
+
+        <ul
+            class="py-3 lg:py-0 border-t-2 border-solid border-white lg:border-0 w-full flex flex-col justify-between xl:h-28"
+        >
+            <li class="flex lg:justify-center py-4">
+                <h5 class="flex lg:text-center items-baseline gap-x-2">
+                    <Point className="fill-white h-4 w-4" />
+                    Avenida-Carrera, #12A-42, Bogota DC, Colombia
+                </h5>
+            </li>
+            <li class="flex lg:justify-center py-4">
+                <h5 class="flex items-baseline gap-x-2">
+                    <Phone className="fill-white h-4 w-4" />
+                    +57 601 4567899
+                </h5>
+            </li>
+        </ul>
+
+        <ul
+            class="flex flex-row lg:flex-col border-t-2 border-solid border-white lg:border-0 justify-between w-full
+             lg:gap-y-6 -fit xl:h-28 py-4"
+        >
+            <li>
+                <h5 class="flex justify-end">Politicas de privacidad</h5>
+            </li>
+            <li>
+                <h5 class="flex justify-end">Politicas de privacidad</h5>
+            </li>
+        </ul>
+    </div>
+
+    <ul
+        class="flex border-t-2 border-solid border-white lg:border-0 gap-4 lg:mt-10 py-4"
+    >
+        <li><Twiter className="fill-white h-7 w-7" /></li>
+        <li><Facebook className="fill-white h-7 w-7" /></li>
+        <li><Instagram className="fill-white h-7 w-7" /></li>
+    </ul>
+</footer>
+
+<style></style>

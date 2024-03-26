@@ -1,0 +1,44 @@
+---
+type Props = {
+    name: string;
+    email: string;
+};
+import { Image } from "astro:assets";
+
+const { name, email } = Astro.props;
+---
+
+<li class="relative h-60 mb-16">
+    <picture id="background" class="h-40 w-full flex justify-center">
+        <Image
+            alt=""
+            src={"/public/img/Hotelia horizontal blanco.svg"}
+            height={60}
+            width={550}
+            class="aspect-[2/1] p-5 px-8 pb-7"
+        />
+    </picture>
+
+    <div class="flex gap-x-4 items-center relative py-5 px-8 bg-neutralBlue2">
+        <Image
+            alt=""
+            src={"/img/profiles/profile-1.webp"}
+            height={55}
+            width={55}
+            class="aspect-square rounded-lg"
+        />
+
+        <div class="text-white flex flex-col gap-y-1">
+            <h3 class="text-xl">{name}</h3>
+            <span class="text-sm">{email}</span>
+        </div>
+    </div>
+</li>
+
+<style>
+    picture {
+        background-image: url("/img/Group 200.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>

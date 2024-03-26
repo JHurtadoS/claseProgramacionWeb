@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+
+
+import Start from "../Logos/Start.astro";
+
+
+export enum Valoracion {
+    Uno = 1,
+    Dos = 2,
+    Tres = 3,
+    Cuatro = 4,
+    Cinco = 5
+};
+
+export interface UserReview {
+    id: number;
+    name: string;
+    valoration: Valoracion;
+}
+
+interface Props extends UserReview { };
+
+const { id, name, valoration } = Astro.props;
+
+interface star{
+    type:"rose"|"white"
+}
+
+
+// const startValoration = <StarWhite />
+// const startNoValoration = <StarRose  />
+const url = `/img/profiles/profile-${id}.webp`;
+const stars: Array<star> = [];
+
+let i = valoration;
+for (let index = 1; index <= 5; index++) {
+    if (i > 0) {
+        stars.push({ type: "white" });
+        i--;
+    } else {
+        stars.push({ type: "rose" });
+    }
+}
+
+
+---
+
+<article class=" max-w-md md:max-w-full h-[22rem] relative bg-gradient-to-r from-neutralBlue to-neutralBlue2">
+    <picture class=" absolute h-40 w-full ">
+
+    </picture>
+    <header class="flex gap-x-5  p-3">
+        <div class=" h-[90px] w-[90px]">
+        <Image src={url} class="profile z-0"  alt="imagen perfil" width={90} height={90} />
+        </div>
+        <div class="flex flex-col mt-5 gap-1 w-auto z-10">
+            <h4 class=" text-2xl text-white">{name}</h4>
+        <div class="flex gap-2">
+            {stars.map((e) => e.type==="rose" ? <Start className="h-6 w-6 fill-rose" /> : <Start className="h-6 w-6 fill-white" />)}
+        </div>
+        </div>
+    </header>
+    <p class="text-white text-pretty text-xl p-5 pt-[4.5rem] font-light">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi
+        asperiores adipisci velit non, atque mollitia, quisquam suscipit culpa
+        vitae error vitae error
+    </p>
+</article>
+
+<style>
+    picture {
+        background-image: url("/img/Group 200.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    article .profile{
+        clip-path: circle(50% at 50% 50%);
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+    }
+    article{
+
+    }
+</style>
+
+<script></script>

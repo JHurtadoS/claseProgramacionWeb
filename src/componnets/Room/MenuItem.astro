@@ -1,0 +1,23 @@
+---
+type Props = {
+    isSelected?: boolean;
+};
+
+const { isSelected } = Astro.props;
+---
+
+<li
+    class="py-2 px-8 flex text-white"
+    class:list={[{ "bg-neutralBlue": isSelected }]}
+>
+    <slot />
+    <!-- <h3>{name}</h3> -->
+</li>
+
+<style>
+    li {
+        a {
+            @apply flex items-center gap-7 w-full mx-auto;
+        }
+    }
+</style>

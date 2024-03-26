@@ -1,0 +1,201 @@
+---
+import "../css/main.css";
+import Navbar from "../componnets/Main/Navbar.astro";
+import Background from "../componnets/Main/Background.astro";
+import { Image } from "astro:assets";
+import Bell from "../componnets/Logos/Bell.astro";
+import Dumbble from "../componnets/Logos/Dumbble.astro";
+import Wifi from "../componnets/Logos/Wifi.astro";
+import Bed from "../componnets/Logos/Bed.astro";
+import {
+	Valoracion,
+	type UserReview,
+} from "../componnets/Main/ReviewCard.astro";
+import ReviewCard from "../componnets/Main/ReviewCard.astro";
+import Footer from "../componnets/Footer.astro";
+
+const users: Array<UserReview> = [
+	{
+		id: 1,
+		name: "Diego Rodriguez",
+		valoration: Valoracion.Cuatro,
+	},
+	{
+		id: 2,
+		name: "Diana Garcia",
+		valoration: Valoracion.Cinco,
+	},
+	{
+		id: 3,
+		name: "Diego Rodirguez",
+		valoration: Valoracion.Cuatro,
+	},
+];
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>APP</title>
+	</head>
+	<body>
+		<header>
+			<Navbar />
+		</header>
+		<main>
+			<Background />
+		</main>
+		<section class="flex justify-center">
+			<div
+				class="py-20 px-10 lg:py-40 lg:px-20 w-full flex flex-col md:flex-row gap-10 md:justify-between md:w-11/12"
+			>
+				<p class="max-w-5xl text-[1.4rem] text-pretty">
+					Estamos ubicados en el barrio La Cabrera al norte de Bogotá,
+					en un contexto de lujo donde interactúan los negocios, el
+					ocio y el descanso, gracias a su estratégica ubicación
+					rodeada de bancos, restaurantes de alta cocina, centros
+					comerciales, almacenes de lujo y emblemáticos parques para
+					aprovechar la naturaleza entre la ciudad caminay y hacer un
+					poco de deporte al aire libre están el parque del Virrey y
+					El Parque de la 93. Además de nuestro exclusivo diseño,
+					ponemos a tu disposición una oferta gastronómica tan
+					sofisticada como saludable a base de productos locales,
+					cargados de lo mejor de la tradición colombiana.
+				</p>
+
+				<Image
+					class="object-contain aspect-[15/17]"
+					src="/public/img/Hotelia negro vertical.svg"
+					alt="Hotelia negro vertical"
+					width={300}
+					height={300}
+				/>
+			</div>
+		</section>
+		<section id="enjoy-cards" class="mt-6 pt-8 !px-0">
+			<h2
+				class="w-full p-1 text-white text-center text-[2.3rem] bg-black/50 px-12 drop-shadow-xl"
+			>
+				Razones por las que disfrutaras quedarte con nostros
+			</h2>
+			<div class="min-h-[420px] w-full px-8">
+				<div
+					class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+					xl:grid-cols-4 gap-x-20 gap-y-6 pb-12 mx-6"
+				>
+					<article
+						class="bg-darkBlue/80 p-9 h-48 flex flex-col items-center gap-y-8"
+					>
+						<Bell className="h-20 w-20 text-white" />
+						<h3
+							class="text-2xl text-white font-semibold tracking-wide"
+						>
+							Lorem ipsum dolor
+						</h3>
+					</article>
+					<article
+						class="bg-black/80 p-9 h-48 flex flex-col items-center gap-y-8"
+					>
+						<Bed className="h-20 w-20 text-white" />
+						<h3
+							class="text-2xl text-white font-semibold tracking-wide"
+						>
+							Lorem ipsum dolor
+						</h3>
+					</article>
+					<article
+						class="bg-darkBlue/80 p-9 h-48 flex flex-col items-center gap-y-8"
+					>
+						<Wifi className="h-20 w-20 text-white" />
+						<h3
+							class="text-2xl text-white font-semibold tracking-wide"
+						>
+							Lorem ipsum dolor
+						</h3>
+					</article>
+					<article
+						class="bg-black/80 p-9 h-48 flex flex-col items-center gap-y-8"
+					>
+						<Dumbble className="h-20 w-20 text-white" />
+						<h3
+							class="text-2xl text-white font-semibold tracking-wide"
+						>
+							Lorem ipsum dolor
+						</h3>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section class="mt-6 pt-6">
+			<h2 class="text-6xl text-center my-8">Ubicanos</h2>
+			<div style="width: 100%">
+				<iframe
+					class="my-8"
+					width="100%"
+					height="400"
+					src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)
+					&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+					><a href="https://www.gps.ie/">gps devices</a></iframe
+				>
+			</div>
+
+			<div class="flex justify-center">
+				<h3
+					aria-details="Direccion"
+					class="my-7 text-4xl text-center border-neutralBlue border-b-2 px-8 pb-3 inline-block"
+				>
+					Avenida-Carrera, #12A-42, Bogota DC, Colombia
+				</h3>
+			</div>
+			<h3 aria-details="telefono" class="my-7 text-4xl text-center">
+				+57 601 4567899
+			</h3>
+		</section>
+		<section class="mt-6 pt-6 !px-0">
+			<header class="h-72 bg-black px-6">
+				<h2
+					class="text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-white w-full text-center pt-10"
+				>
+					Nuestros usuarios dicen...
+				</h2>
+			</header>
+			<div
+				class="px-9 -translate-y-28 grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+			>
+				{
+					users.map((e) => (
+						<ReviewCard
+							id={e.id}
+							name={e.name}
+							valoration={e.valoration}
+						/>
+					))
+				}
+			</div>
+		</section>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	section {
+		@apply px-12;
+	}
+
+	#enjoy-cards {
+		background-image: url("/img/Index/bg-features.png");
+		background-position: center center;
+		background-size: cover;
+		object-fit: contain;
+		background-repeat: no-repeat;
+		width: 100%;
+	}
+
+	#enjoy-cards h2 {
+		text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.3);
+	}
+</style>
