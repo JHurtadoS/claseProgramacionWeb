@@ -1,0 +1,33 @@
+---
+import ArrowDown from "../Logos/ArrowDown.astro";
+
+type Props = {
+    options: string[];
+    label: string;
+    name: string;
+    classname?: string;
+};
+
+const { options, name, label, classname } = Astro.props;
+---
+
+<label class="mx-2">{label}</label>
+<div class="w-fit">
+    <select id={name} name={name} class={classname}>
+        <option selected>Todas</option>
+        {options.map((e) => <option>{e}</option>)}
+    </select>
+    <span class="select-arrow">
+        <ArrowDown
+            className=" absolute fill-white w-[2.2rem] h-[2.2rem] p-[0.35rem] bg-black right-0 top-0  "
+        />
+    </span>
+</div>
+
+<style>
+    span {
+        pointer-events: none;
+    }
+</style>
+
+<script></script>

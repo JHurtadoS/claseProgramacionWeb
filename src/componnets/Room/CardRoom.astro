@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+
+type Props = {
+    id: number;
+    imageUrl: string;
+    name: string;
+    description: string;
+    price: number;
+    reserved: boolean;
+};
+
+const { id, imageUrl, name, description, price, reserved } = Astro.props;
+
+const newPrice = new Intl.NumberFormat("es-ES", {
+    minimumFractionDigits: 0,
+}).format(price);
+---
+
+<article
+    id={`room_${id}`}
+    class="px-5 py-2 flex-col border-t-2 border-l-2 border-solid border-gray-200"
+>
+    <picture class="relative w-fit mx-auto flex">
+        <Image
+            class="aspect-square"
+            src={imageUrl}
+            alt="a"
+            width={"500"}
+            height={500}
+            loading={"lazy"}
+        />
+        <figcaption
+            class="absolute bottom-0 p-3 bg-mainBlue bg-opacity-70 text-white z-10 w-full text-center text-lg"
+        >
+            <h2>{name}</h2>
+        </figcaption>
+        {
+            reserved ? (
+                <div
+                    id="overlay-reserved"
+                    class="absolute w-full h-full bg-black bg-opacity-50 flex 
+                    justify-center items-center top-0 "
+                >
+                    <span class=" text-5xl text-white rotate-[-35deg] -translate-y-6">
+                        Reservada
+                    </span>
+                </div>
+            ) : null
+        }
+    </picture>
+    <h3 class="my-3 text-5xl text-center font-normal">{`$${newPrice}`}</h3>
+    <p class="text-pretty my-3 text-lg font-medium text-justify">
+        Lorem ipsum dolor sit amet impedit a molestias modi at. ex odit autem
+        fuga odio dolorutid
+    </p>
+    <div class="flex gap-y-2 my-3 w-full justify-between">
+        <button class="modify"> Modificar </button>
+
+        <button class="toDisable"> Activar </button>
+    </div>
+</article>
+
+<style>
+    article {
+        box-shadow: 2px 2px 3px 0px #00000024;
+    }
+
+    button {
+        @apply py-[0.35rem] px-5 text-white w-[45%] rounded-[0.25rem] font-medium;
+    }
+    .modify {
+        @apply bg-black;
+    }
+
+    .toDisable {
+        @apply bg-rose;
+    }
+</style>

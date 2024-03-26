@@ -12,10 +12,12 @@ export default {
         black: "#383434",
         grey: "#b2b3b3",
         neutralBlue: "#337ab7",
-        neutralBlue2: "#28679e",
+        neutralBlue2: "#3074ac",
         rose: "#9c2759",
         greenNeutal: "#157a8a",
         darkBlue: "#103c64",
+        mainBlue:"#30ace4"
+        
       },
     },
   },

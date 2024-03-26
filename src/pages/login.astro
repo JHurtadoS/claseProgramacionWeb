@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import User from "../componnets/Logos/User.astro";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+    </head>
+    <body class="min-h-screen">
+        <div
+            id="main-comtainer"
+            class="flex w-full h-screen p-4 justify-center items-center"
+        >
+            <div class="form-container max-w-xl">
+                <header
+                    class="px-8 py-7 bg-white w-full flex justify-center bg-opacity-70 rounded-t-md"
+                >
+                    <Image
+                        src="/public/img/Hotelia horizontal negro.svg"
+                        height={40}
+                        width={200}
+                        alt="logo"
+                    />
+                </header>
+                <div
+                    class="justify-center flex flex-col items-center bg-gradient-to-tr
+             from-neutralBlue/80 to-neutralBlue2/80 py-6 w-full"
+                >
+                    <picture class="p-4 bg-rose rounded-full">
+                        <User className=" h-10 w-10 fill-white" />
+                    </picture>
+                    <form
+                        action=""
+                        class="flex flex-col items-center px-4 md:px-4 lg:px-10 w-[30rem] max-w-[23rem] md:max-w-[90%]"
+                    >
+                        <div class="py-2 w-full">
+                            <label
+                                class="block w-full text-2xl text-white mb-1"
+                                for="user">Usuario</label
+                            >
+                            <input
+                                class="w-full py-[0.45rem] rounded-sm shadow-md"
+                                type="text"
+                                name="user"
+                            />
+                        </div>
+                        <div class="py-2 w-full">
+                            <label
+                                class="block w-full text-2xl text-white mb-1 drop-shadow-xl"
+                                for="password">Contraseña</label
+                            >
+                            <input
+                                class="w-full py-[0.45rem] rounded-sm shadow-md"
+                                type="password"
+                                name="password"
+                                id="password"
+                            />
+                        </div>
+                        <div class="py-2 w-full mt-5">
+                            <button
+                                class="text-white bg-black hover:bg-black focus:outline-none
+                         focus:ring-gray-300 text-2xl px-5 py-1.5 me-2 mb-2 dark:bg-black
+                         dark:hover:bg-gray-700 dark:border-gray-700 transition duration-300 ease-out
+                         w-full"
+                                ><span class="flex h-9 w-full justify-center"
+                                    >Ingresar</span
+                                ></button
+                            >
+                        </div>
+
+                        <div
+                            class="flex justify-center text-xl gap-2 flex-col md:flex-row items-center"
+                            id="links"
+                        >
+                            <span class="text-white w-fit"
+                                >¿No tienes una cuenta?</span
+                            >
+                            <a class="w-fit" href="#"> Registrate aqui</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <style>
+        body {
+            background-image: url("/img/login/LoginBackground.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        label {
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</html>
