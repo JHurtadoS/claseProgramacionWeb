@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+import CustomInput from "../../componnets/Form/CustomInput.astro";
+import CustomRadioGroup from "../../componnets/Form/CustomRadioGroup.astro";
+import BasicBarComponentsNav from "../../componnets/Main/BasicBarComponentsNav.astro";
+import "../../css/main.css";
+import LayoutSideBar from "../../layouts/LayoutSideBar.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<LayoutSideBar title="pefil" backgroundSrc="/img/BasicBackground.webp">
+    <BasicBarComponentsNav slot="bar-content" />
+    <div slot="main-content" class="flex w-[95%] py-3 justify-center mx-auto">
+        <form
+            class="bg-white bg-opacity-60 rounded lg:mx-6 w-[98%] px-6 py-3"
+            action=""
+        >
+            <header class="w-full text-4xl mt-2 mb-4">
+                <h2 class="text-center">Bienvenido , Angie vargas</h2>
+            </header>
+            <div class="w-full flex gap-8 flex-col md:flex-row">
+                <aside class="flex flex-col">
+                    <picture class="mb-2 flex justify-center">
+                        <Image
+                            src="/img/profilePhoto.webp"
+                            height={250}
+                            width={250}
+                            alt="logo"
+                            class="aspect-square"
+                        />
+                    </picture>
+                    <div class="p-1 flex justify-between mb-7"></div>
+                    <button
+                        class="rounded-sm bg-black text-white text-xl py-2 px-4"
+                    >
+                        Cambiar contraseña
+                    </button>
+                </aside>
+                <div class="flex flex-wrap gap-y-1 gap-x-8 w-full">
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="lg:!w-[46%]"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Numero de docuemnto"
+                        name="cedula"
+                        className=" lg:!w-[46%]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Nombres"
+                        name="nombre"
+                        className=" lg:!w-[46%]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Apellidos"
+                        name="apellidos"
+                        className=" lg:!w-[46%]"
+                    />
+                    <CustomInput
+                        type="date"
+                        label="Fecha de nacimiento"
+                        name="FechaNacimiento"
+                        className=" lg:!w-[46%]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Pais de Origen"
+                        name="paisDeOrigen"
+                        className=" lg:!w-[46%]"
+                    />
+                    <CustomRadioGroup
+                        classname=""
+                        options={[
+                            { value: "mujer", label: "Mujer" },
+                            { value: "hombre", label: "Hombre" },
+                            { value: "otro", label: "Otro" },
+                        ]}
+                        name="genero"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Telefono de contacto"
+                        name="telefono"
+                        className=" lg:!w-[46%]"
+                    />
+
+                    <div class="w-full flex">
+                        <CustomInput
+                            type="email"
+                            label="Email"
+                            name="email"
+                            className=" lg:!w-[46%]"
+                        />
+                    </div>
+
+                    <div class="w-full">
+                        <button
+                            class="rounded-sm py-3 text-white text-xl text-center bg-black px-20 font-light mt-4 mb-3"
+                        >
+                            Actualizar
+                        </button>
+                    </div>
+                    <CustomInput
+                        type="password"
+                        label="Contraseña"
+                        name="password"
+                        className=""
+                    />
+                    <CustomInput
+                        type="password"
+                        label="Confirmar contraseña"
+                        name="Confirmpassword"
+                        className=" lg:!w-[46%]"
+                    />
+                    <div class="w-full">
+                        <button
+                            class="rounded-sm py-1 text-white text-xl text-center bg-black px-20 font-light mt-4"
+                        >
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</LayoutSideBar>
+
+<style></style>
+
+<script></script>

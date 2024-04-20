@@ -1,0 +1,111 @@
+---
+import CustomSelect from "../../../componnets/Form/CustomSelect.astro";
+import CardRoom from "../../../componnets/Room/CardRoom.astro";
+import MenuItem from "../../../componnets/Room/MenuItem.astro";
+import Bed from "../../../componnets/Logos/Bed.astro";
+import CardProfile from "../../../componnets/Room/CardProfile.astro";
+import LayoutSideBar from "../../../layouts/LayoutSideBar.astro";
+import BasicBarComponentsNav from "../../../componnets/Main/BasicBarComponentsNav.astro";
+
+const rooms = [
+    {
+        id: 1,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 128000,
+        reserved: false,
+    },
+    {
+        id: 2,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 250000,
+        reserved: true,
+    },
+    {
+        id: 3,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 166000,
+        reserved: false,
+    },
+    {
+        id: 4,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 220000,
+        reserved: true,
+    },
+    {
+        id: 5,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 180000,
+        reserved: false,
+    },
+    {
+        id: 6,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 195000,
+        reserved: true,
+    },
+];
+---
+
+<LayoutSideBar title="Habitaciones">
+    <div slot="bar-content">
+        <BasicBarComponentsNav />
+    </div>
+    <div slot="main-content">
+        <header>
+            <h1 class="text-6xl text-center my-8">Habitaciones</h1>
+        </header>
+        <div class="bg-black bg-opacity-10 flex justify-center py-8 w-full">
+            <div class="flex w-7/12 justify-between">
+                <div class="relative flex items-center">
+                    <CustomSelect
+                        name="categoria"
+                        label="Categoria"
+                        options={["test 1", "test 2"]}
+                        classname=" shadow-md py-[0.35rem] w-56 "
+                    />
+                </div>
+                <div class="relative flex items-center">
+                    <CustomSelect
+                        name="estado"
+                        label="Estado"
+                        classname="shadow-md py-[0.35rem] w-56 "
+                        options={["test 1", "test 2"]}
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <div
+                class="my-5 grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-20 2xl:gap-28 w-11/12"
+            >
+                {
+                    rooms.map((e, index) => (
+                        <CardRoom
+                            id={index}
+                            imageUrl={e.imageUrl}
+                            name={e.name}
+                            reserved={e.reserved}
+                            price={e.price}
+                            description={e.description}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</LayoutSideBar>
+
+<style></style>

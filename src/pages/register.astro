@@ -1,0 +1,159 @@
+---
+import BasicForm from "../componnets/Form/BasicForm.astro";
+import { Image } from "astro:assets";
+import CustomInput from "../componnets/Form/CustomInput.astro";
+import CustomRadioGroup from "../componnets/Form/CustomRadioGroup.astro";
+import "../css/main.css";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+    </head>
+    <body class="min-h-screen flex flex-col md:flex-row">
+        <div
+            class="h-28 md:h-auto w-full md:w-5/12 mt-8 mb-5 md:my-0 p-2 px-6 flex items-center flex-col
+             justify-center bg-gradient-to-tr from-neutralBlue/95 to-darkBlue/95 py-3"
+        >
+            <picture class="w-fit flex h-fit md:my-6">
+                <Image
+                    alt=""
+                    src={"/img/Hotelia horizontal blanco.svg"}
+                    height={50}
+                    width={160}
+                    class="flex md:hidden"
+                    loading="lazy"
+                />
+                <Image
+                    alt=""
+                    src={"/img/Hotelia horizontal blanco.svg"}
+                    height={100}
+                    width={270}
+                    class="hidden md:flex"
+                    loading="lazy"
+                />
+            </picture>
+            <h1
+                class="text-3xl md:text-4xl text-white text-center font-light md:hidden"
+            >
+                Un lugar en tu corazon
+            </h1>
+            <h1
+                class="text-3xl md:text-4xl text-white text-center font-light hidden md:block"
+            >
+                Eres más que bienvenido
+            </h1>
+        </div>
+        <main class="w-full">
+            <BasicForm classnameWrapper=" my-6 mx-4">
+                <h1
+                    class="text-2xl md:text-4xl lg:text-5xl text-center"
+                    slot="header"
+                >
+                    Regístrate
+                </h1>
+                <div class="flex flex-wrap gap-y-1 gap-x-8 w-full">
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className=" max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Numero de docuemnto"
+                        name="cedula"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Nombres"
+                        name="nombre"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Apellidos"
+                        name="apellidos"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="date"
+                        label="Fecha de nacimiento"
+                        name="FechaNacimiento"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="text"
+                        label="Pais de Origen"
+                        name="paisDeOrigen"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomRadioGroup
+                        classname="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                        options={[
+                            { value: "mujer", label: "Mujer" },
+                            { value: "hombre", label: "Hombre" },
+                            { value: "otro", label: "Otro" },
+                        ]}
+                        name="genero"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Telefono de contacto"
+                        name="telefono"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+
+                    <div class="w-full flex">
+                        <CustomInput
+                            type="email"
+                            label="Email"
+                            name="email"
+                            className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                        />
+                    </div>
+
+                    <div class="w-full">
+                        <button
+                            class="rounded-sm py-3 text-white text-xl text-center bg-black px-20 font-light mt-4 mb-3"
+                        >
+                            Actualizar
+                        </button>
+                    </div>
+                    <CustomInput
+                        type="password"
+                        label="Contraseña"
+                        name="password"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <CustomInput
+                        type="password"
+                        label="Confirmar contraseña"
+                        name="Confirmpassword"
+                        className="max-w-full xl:max-w-[45%] lg:max-w-[250px]"
+                    />
+                    <div class="w-full">
+                        <button
+                            class="rounded-sm py-1 text-white text-xl text-center bg-black px-20 font-light mt-4"
+                        >
+                            Actualizar
+                        </button>
+                    </div>
+                </div>
+            </BasicForm>
+        </main>
+    </body>
+
+    <style>
+        body {
+            background-image: url("/img/login/LoginBackground.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
+</html>

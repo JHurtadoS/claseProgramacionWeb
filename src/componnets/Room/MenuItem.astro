@@ -4,14 +4,16 @@ type Props = {
 };
 
 const { isSelected } = Astro.props;
+
+export interface ItemContent {
+    name: string;
+    url: string;
+    icon: any;
+}
 ---
 
-<li
-    class="py-2 px-8 flex text-white"
-    class:list={[{ "bg-neutralBlue": isSelected }]}
->
+<li class="py-2 px-2 md:px-8 flex text-white">
     <slot />
-    <!-- <h3>{name}</h3> -->
 </li>
 
 <style>

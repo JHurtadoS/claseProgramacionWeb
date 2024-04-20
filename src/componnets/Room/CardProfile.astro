@@ -8,18 +8,42 @@ import { Image } from "astro:assets";
 const { name, email } = Astro.props;
 ---
 
-<li class="relative h-60 mb-16">
-    <picture id="background" class="h-40 w-full flex justify-center">
+<li class="relative mb-16 h-fit md:h-60">
+    <picture
+        id="background"
+        class="h-40 w-full hidden md:flex md:justify-center"
+    >
         <Image
             alt=""
             src={"/img/Hotelia horizontal blanco.svg"}
-            height={60}
+            height={55}
             width={550}
-            class="aspect-[2/1] p-5 px-8 pb-7"
+            class="aspect-[2/1] p-5 px-8 pb-7 w-14 md:w-full"
+        />
+    </picture>
+    <picture
+        id="background"
+        class="md:hidden flex flex-col items-center w-[4.5rem] md:w-fit"
+    >
+        <Image
+            alt=""
+            src={"/img/hotelia campana.svg"}
+            height={55}
+            width={55}
+            class="aspect-square p-3 flex"
+        />
+        <Image
+            alt=""
+            src={"/img/profiles/profile-1.webp"}
+            height={55}
+            width={55}
+            class="aspect-square rounded-lg"
         />
     </picture>
 
-    <div class="flex gap-x-4 items-center relative py-5 px-8 bg-neutralBlue2">
+    <div
+        class="gap-x-4 relative py-5 px-8 bg-neutralBlue2 hidden md:flex items-center"
+    >
         <Image
             alt=""
             src={"/img/profiles/profile-1.webp"}
@@ -28,7 +52,7 @@ const { name, email } = Astro.props;
             class="aspect-square rounded-lg"
         />
 
-        <div class="text-white flex flex-col gap-y-1">
+        <div class="text-white gap-y-1 hidden md:flex flex-col">
             <h3 class="text-xl">{name}</h3>
             <span class="text-sm">{email}</span>
         </div>
@@ -40,5 +64,11 @@ const { name, email } = Astro.props;
         background-image: url("/img/Group 200.svg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
+    }
+    @media (min-width: 768px) {
+        picture {
+            background-position: left;
+        }
     }
 </style>

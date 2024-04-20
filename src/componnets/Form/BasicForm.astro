@@ -1,0 +1,23 @@
+---
+type Props = {
+    classname?: string;
+    classnameWrapper?: string;
+};
+
+const { classname, classnameWrapper } = Astro.props;
+---
+
+<div class={classnameWrapper}>
+    <form
+        class={classname +
+            " bg-white bg-opacity-60 rounded md:mx-5  px-6 md:px-[3.5rem] py-3 w-[98%] "}
+        action=""
+    >
+        <header class="w-full text-4xl mt-2 mb-4">
+            <slot name="header" />
+        </header>
+
+        <slot />
+    </form>
+</div>
+<style></style>

@@ -1,0 +1,32 @@
+---
+type Props = {
+    name: string;
+    label: string;
+    type: astroHTML.JSX.HTMLInputTypeAttribute;
+    className?: string;
+};
+
+const { name, label, type, className } = Astro.props;
+---
+
+<label class={`widthInput z-10 heightInput ${className}`} for={name}>
+    <span class="text-lg block mb-1">{label}</span>
+    <input
+        class="w-full bg-white opacity-100 border-blue-200 shadow-md"
+        name={name}
+        id={name}
+        type={type}
+    />
+</label>
+
+<style is:global>
+    .heightInput {
+        input {
+            @apply py-[0.3rem];
+        }
+    }
+
+    .widthInput {
+        @apply max-w-full sm:w-[95%] w-full;
+    }
+</style>

@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import CustomInput from "../../../componnets/Form/CustomInput.astro";
+import CustomRadioGroup from "../../../componnets/Form/CustomRadioGroup.astro";
+import BasicBarComponentsNav from "../../../componnets/Main/BasicBarComponentsNav.astro";
+import "../../../css/main.css";
+import LayoutSideBar from "../../../layouts/LayoutSideBar.astro";
+import CustomTextArea from "../../../componnets/Form/CustomTextArea.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<LayoutSideBar title="pefil" backgroundSrc="/img/BasicBackground.webp">
+    <BasicBarComponentsNav slot="bar-content" />
+    <div slot="main-content" class="flex w-[95%] py-3 justify-center mx-auto">
+        <form
+            class="bg-white bg-opacity-60 rounded lg:mx-6 w-[98%] px-6 py-3"
+            action=""
+        >
+            <header class="w-full text-4xl mt-2 mb-4">
+                <h2 class="text-center">Bienvenido , Angie vargas</h2>
+            </header>
+            <div class="w-full flex gap-8 flex-col md:flex-row">
+                <div class="flex flex-wrap gap-y-1 gap-x-14 w-full">
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="xl:!w-[59%]"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="xl:!w-[31%]"
+                    />
+
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="lg:!w-[45%] xl:!w-[26.5%]"
+                    />
+
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="lg:!w-[45%] xl:!w-[26.5%]"
+                    />
+
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="lg:!w-[45%] xl:!w-[31%]"
+                    />
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="lg:!w-[45%] xl:!w-[59%]"
+                    />
+
+                    <CustomInput
+                        type="number"
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="xl:!w-[31%]"
+                    />
+
+                    <CustomTextArea
+                        label="Tipo de documento"
+                        name="TipoDocumento"
+                        className="xl:!w-[96%] textAreaHeight"
+                    />
+
+                    <CustomRadioGroup
+                        classname="!w-[96%]"
+                        options={[
+                            { value: "mujer", label: "Mujer" },
+                            { value: "hombre", label: "Hombre" },
+                            { value: "otro", label: "Otro" },
+                        ]}
+                        name="genero"
+                    />
+                </div>
+            </div>
+        </form>
+    </div>
+</LayoutSideBar>
+
+<style></style>
+
+<script></script>

@@ -1,0 +1,58 @@
+---
+type Props = {
+    // items: ItemContent[];
+    title: string;
+    backgroundSrc?: string;
+};
+
+const { title, backgroundSrc } = Astro.props;
+
+const backgroundVar = `url(${backgroundSrc})`;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA:Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <link rel="stylesheet" href="../css/main.css" />
+    </head>
+
+    <body class="">
+        <div class="flex min-h-screen min-w-screen">
+            <aside class="bg-black list-none">
+                <slot name="bar-content" />
+            </aside>
+            <main class="w-full py-4">
+                <slot name="main-content" />
+            </main>
+        </div>
+    </body>
+</html>
+
+<script>
+    import {
+        ItsOnSameLink,
+        preventReloadAnchor,
+    } from "../componnets/utils/routing.ts";
+    const links = document.querySelectorAll("a");
+    const MeniItems = document.querySelectorAll("li");
+
+    console.log(MeniItems.length);
+    ItsOnSameLink(MeniItems);
+    preventReloadAnchor(links);
+</script>
+
+<style define:vars={{ backgroundVar }}>
+    main {
+        background-image: var(--backgroundVar);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    main {
+        overflow-x: hidden;
+    }
+</style>

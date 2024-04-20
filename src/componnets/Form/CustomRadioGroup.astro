@@ -1,0 +1,34 @@
+---
+type Props = {
+    options: optionsRadio[];
+    classname?: string;
+    name?: string;
+};
+
+export interface optionsRadio {
+    value: string;
+    label: string;
+}
+
+const { options, classname, name } = Astro.props;
+---
+
+<div class=`widthInput z-10 ${classname}`>
+    <legend class="block text-lg mb-1">Genero</legend>
+    <div class="flex justify-around gap-x-4">
+        {
+            options.map((e) => (
+                <label class=" w-24">
+                    <input
+                        type="radio"
+                        name={!name ? e.value : name}
+                        value={e.value}
+                    />
+                    {e.label}
+                </label>
+            ))
+        }
+    </div>
+</div>
+
+<style></style>

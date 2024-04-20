@@ -1,0 +1,27 @@
+---
+type Props = {
+    name: string;
+    label: string;
+    className?: string;
+};
+
+const { name, label, className } = Astro.props;
+---
+
+<label class={`widthInput z-10 heightInput ${className}`} for={name}>
+    <span class="text-lg block mb-1">{label}</span>
+    <textarea
+        class="w-full bg-white opacity-100 border-blue-200 shadow-md"
+        name={name}
+        id={name}
+    >
+    </textarea>
+</label>
+
+<style>
+    .textAreaHeight textarea {
+        form-sizing: content;
+        @apply h-24;
+        resize: none;
+    }
+</style>
