@@ -1,11 +1,13 @@
 ---
 import CustomSelect from "../../../componnets/Form/CustomSelect.astro";
-import CardRoom from "../../../componnets/Room/CardRoom.astro";
-import MenuItem from "../../../componnets/Room/MenuItem.astro";
-import Bed from "../../../componnets/Logos/Bed.astro";
-import CardProfile from "../../../componnets/Room/CardProfile.astro";
+import CardRoom, {
+    type ItemRoom,
+} from "../../../componnets/Room/CardRoom.astro";
 import LayoutSideBar from "../../../layouts/LayoutSideBar.astro";
-import BasicBarComponentsNav from "../../../componnets/Main/BasicBarComponentsNav.astro";
+import BasicBarComponentsNav from "../../../componnets/Main/AdminSideBar.astro";
+
+const roomSpecs: ItemRoom[] = [];
+const roomBathSpecs: ItemRoom[] = [];
 
 const rooms = [
     {
@@ -15,6 +17,8 @@ const rooms = [
         description: "",
         price: 128000,
         reserved: false,
+        roomSpecs,
+        roomBathSpecs,
     },
     {
         id: 2,
@@ -23,6 +27,8 @@ const rooms = [
         description: "",
         price: 250000,
         reserved: true,
+        roomSpecs,
+        roomBathSpecs,
     },
     {
         id: 3,
@@ -31,6 +37,8 @@ const rooms = [
         description: "",
         price: 166000,
         reserved: false,
+        roomSpecs,
+        roomBathSpecs,
     },
     {
         id: 4,
@@ -39,6 +47,8 @@ const rooms = [
         description: "",
         price: 220000,
         reserved: true,
+        roomSpecs,
+        roomBathSpecs,
     },
     {
         id: 5,
@@ -47,6 +57,8 @@ const rooms = [
         description: "",
         price: 180000,
         reserved: false,
+        roomSpecs,
+        roomBathSpecs,
     },
     {
         id: 6,
@@ -55,6 +67,8 @@ const rooms = [
         description: "",
         price: 195000,
         reserved: true,
+        roomSpecs,
+        roomBathSpecs,
     },
 ];
 ---
@@ -89,6 +103,7 @@ const rooms = [
         </div>
         <div class="flex justify-center">
             <div
+                id="cards-container"
                 class="my-5 grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-20 2xl:gap-28 w-11/12"
             >
                 {
@@ -99,7 +114,9 @@ const rooms = [
                             name={e.name}
                             reserved={e.reserved}
                             price={e.price}
-                            description={e.description}
+                            description={
+                                " Lorem ipsum dolor sit amet impedit a molestias modi at. ex odit autemfuga odio dolorutid"
+                            }
                         />
                     ))
                 }
@@ -109,3 +126,23 @@ const rooms = [
 </LayoutSideBar>
 
 <style></style>
+
+<script>
+    const cards = document
+        .querySelector("#cards-container")
+        ?.querySelectorAll("article");
+    console.log(cards?.length);
+    const actualUrl = window.location.href;
+    if (cards) {
+        cards.forEach((e) => {
+            const id = e.id;
+            e.querySelector("toDisable")?.addEventListener("click", () => {
+                window.location.replace(`${actualUrl}/disable/${id}`);
+            });
+            e.querySelector("modify");
+            e.addEventListener("click", () => {
+                window.location.replace(`${actualUrl}/update/${id}`);
+            });
+        });
+    }
+</script>

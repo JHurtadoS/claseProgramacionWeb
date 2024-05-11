@@ -1,0 +1,23 @@
+---
+import type { ItemRoom } from "./Room/CardRoom.astro";
+
+type Props = {
+    items: ItemRoom[];
+    title: String;
+};
+
+const { items } = Astro.props;
+---
+
+<ul>
+    {
+        items.map((e) => (
+            <li>
+                {e.icon}
+                {e.description}
+            </li>
+        ))
+    }
+</ul>
+
+<style></style>

@@ -1,0 +1,71 @@
+---
+import CustomInput from "../Form/CustomInput.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<article class="cardShadow relative w-9/12 max-w-md p-9 bg-white mt-36">
+    <header
+        class="absolute -top-[4.5rem] bg-mainBlue text-white text-[1.6rem] px-2 py-1 rounded-[4px] w-10/12 right-1/2 translate-x-1/2 text-center"
+    >
+        <span class="block lg:inline-flex">Busqueda</span>
+
+        <span class="block lg:inline-flex">de Habitaciones</span>
+    </header>
+    <form class="flex flex-col gap-y-5 w-full" action="">
+        <CustomInput
+            label="Entrada:"
+            name="entrada"
+            type="date"
+            className="flex gap-x-4 bg-input items-center py-3"
+        />
+        <CustomInput
+            label="Salida:"
+            name="salida"
+            type="date"
+            className="flex gap-x-4 bg-input items-center py-3"
+        />
+        <CustomInput
+            label="Adultos:"
+            name="adultos"
+            type="number"
+            className="flex gap-x-4 bg-input items-center py-3"
+        />
+        <CustomInput
+            label="Niños:"
+            name="niños"
+            type="number"
+            className="flex gap-x-4 bg-input items-center py-3"
+        />
+
+        <button class="seeRooms"> Ver habitaciones disponibles </button>
+    </form>
+</article>
+
+<style is:global>
+    article {
+        /* box-shadow: 2px 2px 3px 0px rgba(48, 172, 228, 0.5); */
+        box-shadow: 6px 4px 5px 0px rgba(51, 122, 183, 0.4);
+    }
+
+    label {
+        span {
+            @apply w-28;
+        }
+    }
+
+    .bg-input {
+        input {
+            @apply bg-gray-100 p-3;
+            box-shadow:
+                rgb(204, 219, 232) 2px 2px 4px 0px inset,
+                rgba(255, 255, 255, 0.5) -2px -2px 4px 1px inset;
+        }
+    }
+
+    .seeRooms {
+        @apply bg-gray-950 !text-white !mt-5 !w-10/12 mx-auto !py-3;
+    }
+</style>

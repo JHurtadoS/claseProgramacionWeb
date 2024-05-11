@@ -1,0 +1,116 @@
+---
+type Props = {
+    idRoom: string;
+    roomItems?: ItemRoom[];
+    BathRoomItems?: ItemRoom[];
+    picturesSrc?: string[];
+    description: string;
+};
+import { Image } from "astro:assets";
+import type { ItemRoom } from "./Room/CardRoom.astro";
+
+const { idRoom, roomItems, BathRoomItems, picturesSrc, description } =
+    Astro.props;
+---
+
+<span id={idRoom}></span>
+<dialog id={`Room${idRoom}`} class="z-10 bg-white">
+    <div class="p-6">
+        <header>Habitacion Doble</header>
+
+        <div class="relative h-[400px]">
+            {
+                picturesSrc
+                    ? picturesSrc.map((e, index) => (
+                          <picture class="absolute">
+                              <Image
+                                  alt=""
+                                  src={e}
+                                  height={index === 2 ? 200 : 150}
+                                  width={index === 2 ? 400 : 300}
+                                  class="aspect-[2/1] w-[30%]"
+                              />
+                          </picture>
+                      ))
+                    : null
+            }
+        </div>
+
+        <p class="text-pretty py-7">{description}</p>
+
+        <div class="flex gap-x-2 md:gap-x-5">
+            <ul>
+                <h5>Habitacion:</h5>
+                {
+                    roomItems
+                        ? roomItems.map((e) => (
+                              <li>
+                                  {e.icon}
+                                  {e.description}
+                              </li>
+                          ))
+                        : null
+                }
+            </ul>
+            <ul>
+                <h5 class="">Baño:</h5>
+                {
+                    BathRoomItems
+                        ? BathRoomItems.map((e) => (
+                              <li>
+                                  {e.icon}
+                                  {e.description}
+                              </li>
+                          ))
+                        : null
+                }
+            </ul>
+        </div>
+
+        <button autofocus>Cerrar</button>
+    </div>
+</dialog>
+
+<style>
+    h5 {
+        @apply text-neutralBlue text-lg mb-10;
+    }
+
+    li:first-child {
+        @apply mr-2;
+    }
+
+    .gallery:nth-child(1) {
+        left: 0;
+    }
+    .gallery:nth-child(1),
+    .gallery:nth-child(3) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .gallery:nth-child(3) {
+        right: 0;
+    }
+    gallery:nth-child(2) {
+        right: 50%;
+        transform: translateX(50%);
+    }
+</style>
+
+<script>
+    const roomId = document.querySelector("span")?.id;
+    let RoomButton;
+    if (roomId) RoomButton = document.getElementById(roomId);
+
+    const dialog = document.querySelector("dialog");
+    const closeButton = document.querySelector("dialog button");
+
+    RoomButton?.addEventListener("click", () => {
+        dialog?.showModal();
+    });
+
+    closeButton?.addEventListener("click", () => {
+        dialog?.close();
+    });
+</script>

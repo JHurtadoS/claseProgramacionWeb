@@ -1,0 +1,47 @@
+---
+import Bed from "../Logos/Bed.astro";
+import CardProfile from "../Room/CardProfile.astro";
+import MenuItem from "../Room/MenuItem.astro";
+---
+
+<>
+    <CardProfile name="Angie vargas" email="test@gmail.com" />
+    <MenuItem isSelected>
+        <a
+            id="menuButton"
+            href="/rooms"
+            class="flex md:justify-start justify-center"
+        >
+            <Bed className="h-7 w-8 md:h-10 md:w-10 " />
+            <span> Habitaciones</span>
+        </a>
+    </MenuItem>
+
+    <MenuItem>
+        <a
+            id="menuButton"
+            href="/profile"
+            class="flex md:justify-start justify-center"
+        >
+            <Bed className="h-7 w-8 md:h-10 md:w-10" />
+            <span> Perfil </span>
+        </a>
+    </MenuItem>
+
+    <MenuItem>
+        <a
+            id="menuButton"
+            href="/booking"
+            class="flex md:justify-start justify-center"
+        >
+            <Bed className="h-7 w-8 md:h-10 md:w-10" />
+            <span> Reservas </span>
+        </a>
+    </MenuItem>
+</>
+
+<style>
+    span {
+        @apply hidden md:block;
+    }
+</style>

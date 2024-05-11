@@ -1,0 +1,93 @@
+---
+import GuestSideBar from "../../componnets/Main/GuestSideBar.astro";
+import AdvanceSearchCard from "../../componnets/Room/AdvanceSearchCard.astro";
+import CardRoom from "../../componnets/Room/CardRoom.astro";
+import LayoutSideBar from "../../layouts/LayoutSideBar.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+
+const rooms = [
+    {
+        id: 1,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 128000,
+        reserved: false,
+    },
+    {
+        id: 2,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 250000,
+        reserved: true,
+    },
+    {
+        id: 3,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 166000,
+        reserved: false,
+    },
+    {
+        id: 4,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 220000,
+        reserved: true,
+    },
+    {
+        id: 5,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 180000,
+        reserved: false,
+    },
+    {
+        id: 6,
+        imageUrl: "/img/rooms/room1.webp",
+        name: "Habitacion doble",
+        description: "",
+        price: 195000,
+        reserved: true,
+    },
+];
+---
+
+<LayoutSideBar title="pefil">
+    <GuestSideBar slot="bar-content" />
+    <div slot="main-content" class="flex w-[95%] py-3 justify-center mx-auto">
+        <div
+            class="flex flex-col xl:flex-row gap-x-2 items-center xl:items-start"
+        >
+            <AdvanceSearchCard />
+            <div class="mx-6 my-5 grid lg:grid-cols-2 w-11/12 gap-8">
+                {
+                    rooms.map((e, index) => (
+                        <CardRoom
+                            id={index}
+                            imageUrl={e.imageUrl}
+                            name={e.name}
+                            reserved={false}
+                            price={e.price}
+                            description=""
+                            disable={false}
+                            update={false}
+                            canBook
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</LayoutSideBar>
+
+<style></style>
+
+<script></script>
